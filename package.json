@@ -1,0 +1,36 @@
+{
+  "name": "stream-state",
+  "version": "0.0.1",
+  "description": "Streaming State for web applications",
+  "main": "lib/StreamState.umd.js",
+  "module": "lib/StreamState.esm.js",
+  "typings": "dist/StreamState.d.ts",
+  "scripts": {
+    "build": "npm run clean && npm run compile && npm run rollup",
+    "postpublish": "npm run build",
+    "compile": "tsc",
+    "watch": "tsc - w",
+    "rollup": "rollup -c",
+    "lint": "./node_modules/.bin/tslint --fix -c ./tslint.json -p ./tsconfig.json",
+    "test": "node_modules/.bin/jest --forceExit --no-cache  --config jest.config.js",
+    "clean": "npm run clean-dist && npm run clean-lib",
+    "clean-dist": "shx rm -rf ./dist",
+    "clean-lib": "shx rm -rf ./lib"
+  },
+  "author": "Michael Corrigan <mcorrigan89@gmail.com",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^21.1.8",
+    "jest": "^21.2.1",
+    "rollup": "^0.52.1",
+    "rollup-plugin-commonjs": "^8.2.6",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "shx": "^0.2.2",
+    "ts-jest": "^21.2.4",
+    "tslint": "^5.8.0",
+    "typescript": "^2.6.2"
+  },
+  "dependencies": {
+    "rxjs": "^5.5.5"
+  }
+}
